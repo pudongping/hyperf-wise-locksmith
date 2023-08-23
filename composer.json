@@ -1,0 +1,39 @@
+{
+    "name": "pudongping/hyperf-wise-locksmith",
+    "description": "A mutex library provider for the Hyperf framework, designed to enable serialized execution of PHP code in high-concurrency scenarios.",
+    "type": "library",
+    "keywords": [
+        "lock",
+        "locking",
+        "mutex",
+        "serialized",
+        "redlock",
+        "hyperf"
+    ],
+    "homepage": "https://github.com/pudongping/hyperf-wise-locksmith",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "pudongping",
+            "email": "pudongping67@gmail.com",
+            "homepage": "https://github.com/pudongping"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Pudongping\\HyperfWiseLocksmith\\": "src/"
+        }
+    },
+    "autoload-dev": {
+    },
+    "require": {
+        "php": ">=7.2",
+        "hyperf/logger": "~2.2.0",
+        "hyperf/redis": "~2.2.0",
+        "pudongping/wise-locksmith": "^1.0"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    }
+}

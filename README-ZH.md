@@ -11,31 +11,31 @@
 
 </p>
 
-English | [中文](./README-ZH.md)
+[English](./README.md) | 中文
 
-:lock: A mutex library provider for the Hyperf framework, designed to enable serialized execution of PHP code in high-concurrency scenarios. This library is based on [pudongping/wise-locksmith](https://github.com/pudongping/wise-locksmith).
+:lock: 适配 hyperf 框架的互斥锁库，用于在高并发场景下提供 PHP 代码的有序执行。 此库基于 [pudongping/wise-locksmith](https://github.com/pudongping/wise-locksmith) 库构建。
 
-## Requirements
+## 要求
 
 - PHP >= 7.2
 - hyperf ~2.2.0
 
-## Installation
+## 安装
 
 ```shell
 composer require pudongping/hyperf-wise-locksmith:^1.0 -vvv
 ```
 
-## Branches or tags
+## 分支或者标签
 
 - **1.0.x:** For hyperf 2.2
 - **2.0.x:** For hyperf 3.0
 
-## Quickstart
+## 快速开始
 
-Below, an example of deducting user balances in a high-concurrency scenario will be provided to demonstrate the functionality and usage of this library.
+下面，将给出一个高并发场景下扣减用户余额的示例，用于演示此库的作用以及使用。
 
-Create the `app\Controller\BalanceController.php` file and write the following code:
+创建 `app\Controller\BalanceController.php` 文件，写入如下代码： 
 
 ```php
 <?php
@@ -78,7 +78,7 @@ class BalanceController extends AbstractController
 }
 ```
 
-Next, create the `app\Services\AccountBalanceService.php` file and write the following code:
+然后，再创建 `app\Services\AccountBalanceService.php` 文件，写入如下代码
 
 ```php
 <?php
@@ -208,25 +208,26 @@ class AccountBalanceService
 }
 ```
 
-When we access the `/balance/consumer?type=noMutex` URL, we can observe that the user's balance goes negative, which is clearly illogical. However, when we visit the following URLs, we can see that the user's balance is not going negative, demonstrating effective protection of the accuracy of shared resources in a race condition.
+当我们访问 `/balance/consumer?type=noMutex` 地址时，我们可以看到用户的余额会被扣成负数，这明显不符合逻辑。
+然而当我们访问下面几个地址时，我们可以看到用户余额不会被扣成负数，则说明很好的保护了竞态下的共享资源的准确性。
 
-- `/balance/consumer?type=flock` : File lock
-- `/balance/consumer?type=redisLock` : Distributed lock
-- `/balance/consumer?type=redLock` : Redlock
-- `/balance/consumer?type=channelLock` : Coroutine-level mutex
+- `/balance/consumer?type=flock` ：文件锁
+- `/balance/consumer?type=redisLock` ：分布式锁
+- `/balance/consumer?type=redLock` ：红锁
+- `/balance/consumer?type=channelLock` ：协程级别的互斥锁
 
-## Note
+## 注意
 
-Regarding the use of `redisLock` and `redLock`:
+关于使用到 `redisLock` 和 `redLock` 时： 
 
-- When using `redisLock`, it defaults to using the first `key` configuration in the `config/autoload/redis.php` configuration file, which corresponds to the **default** Redis instance. You can optionally pass the fourth parameter `string|null $redisPoolName` to re-specify a different Redis instance as needed.
-- When using `redLock`, it defaults to using all the `key` configurations in the `config/autoload/redis.php` configuration file. You can optionally pass the fourth parameter `?array $redisPoolNames = null` to re-specify different Redis instances as needed.
+- 使用 `redisLock` 默认采用的 `config/autoload/redis.php` 配置文件中的第一个 `key` 配置 redis 实例（即 **default**）。可按需传入第 4 个参数 `string|null $redisPoolName` 进行重新指定。  
+- 使用 `redLock` 默认采用的 `config/autoload/redis.php` 配置文件中的所有 `key` 对应的配置 redis 实例。可按需传入第 4 个参数 `?array $redisPoolNames = null` 进行重新指定。
 
-You can find detailed documentation for [pudongping/wise-locksmith](https://github.com/pudongping/wise-locksmith).
+详细文档可见 [pudongping/wise-locksmith](https://github.com/pudongping/wise-locksmith)。
 
-## Contributing
+## 贡献
 
-Bug reports (and small patches) can be submitted via the [issue tracker](https://github.com/pudongping/hyperf-wise-locksmith/issues). Forking the repository and submitting a Pull Request is preferred for substantial patches.
+Bug 报告(或者小补丁)可以通过 [issue tracker](https://github.com/pudongping/hyperf-wise-locksmith/issues) 提交。对于大量的补丁，最好对库进行 Fork 并提交 Pull Request。
 
 ## License
 
