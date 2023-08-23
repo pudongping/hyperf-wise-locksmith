@@ -222,6 +222,8 @@ Regarding the use of `redisLock` and `redLock`:
 - When using `redisLock`, it defaults to using the first `key` configuration in the `config/autoload/redis.php` configuration file, which corresponds to the **default** Redis instance. You can optionally pass the fourth parameter `string|null $redisPoolName` to re-specify a different Redis instance as needed.
 - When using `redLock`, it defaults to using all the `key` configurations in the `config/autoload/redis.php` configuration file. You can optionally pass the fourth parameter `?array $redisPoolNames = null` to re-specify different Redis instances as needed.
 
+## Documentation
+
 You can find detailed documentation for [pudongping/wise-locksmith](https://github.com/pudongping/wise-locksmith).
 
 ## Contributing

@@ -223,6 +223,8 @@ class AccountBalanceService
 - 使用 `redisLock` 默认采用的 `config/autoload/redis.php` 配置文件中的第一个 `key` 配置 redis 实例（即 **default**）。可按需传入第 4 个参数 `string|null $redisPoolName` 进行重新指定。  
 - 使用 `redLock` 默认采用的 `config/autoload/redis.php` 配置文件中的所有 `key` 对应的配置 redis 实例。可按需传入第 4 个参数 `?array $redisPoolNames = null` 进行重新指定。
 
+## 文档
+
 详细文档可见 [pudongping/wise-locksmith](https://github.com/pudongping/wise-locksmith)。
 
 ## 贡献
