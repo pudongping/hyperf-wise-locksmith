@@ -1,3 +1,5 @@
+ [Requirements](#requirements) | [Installation](#installation) | [Branches or tags](#branches-or-tags) | [Quickstart](#quickstart) | [Note](#note) | [Documentation](#documentation) | [Contributing](#contributing) | [License](#license)
+
 <h1 align="center">hyperf-wise-locksmith</h1>
 
 <p align="center">
@@ -27,6 +29,13 @@ composer require pudongping/hyperf-wise-locksmith:^1.0 -vvv
 ```
 
 ## Branches or tags
+
+### Branch
+
+- **2.2:** For hyperf 2.2
+- **3.0:** For hyperf 3.0
+
+### Tag
 
 - **1.0.x:** For hyperf 2.2
 - **2.0.x:** For hyperf 3.0
