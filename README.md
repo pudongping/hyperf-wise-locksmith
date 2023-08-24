@@ -19,13 +19,13 @@ English | [中文](./README-ZH.md)
 
 ## Requirements
 
-- PHP >= 7.2
-- hyperf ~2.2.0
+- PHP >= 8.0
+- hyperf ~3.0.0
 
 ## Installation
 
 ```shell
-composer require pudongping/hyperf-wise-locksmith:^1.0 -vvv
+composer require pudongping/hyperf-wise-locksmith:^2.0 -vvv
 ```
 
 ## Branches or tags
@@ -54,12 +54,11 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use Hyperf\HttpServer\Annotation\AutoController;
-use Hyperf\Utils\Parallel;
 use App\Services\AccountBalanceService;
+use Hyperf\Coroutine\Parallel;
+use function \Hyperf\Support\make;
 
-/**
- * @AutoController()
- */
+#[AutoController]
 class BalanceController extends AbstractController
 {
 
@@ -105,26 +104,21 @@ use Throwable;
 class AccountBalanceService
 {
 
-    private $logger;
-
-    private $locker;
-
     /**
      * 用户账户初始余额
      *
-     * @var float
+     * @var float|int
      */
-    private $balance = 10;
+    private float|int $balance = 10;
 
-    public function __construct(StdoutLoggerInterface $logger, Locker $locker)
-    {
-        $this->logger = $logger;
-        $this->locker = $locker;
-
+    public function __construct(
+        private StdoutLoggerInterface $logger,
+        private Locker                $locker
+    ) {
         $this->locker->setLogger($logger);
     }
 
-    private function deductBalance(float $amount)
+    private function deductBalance(float|int $amount)
     {
         if ($this->balance >= $amount) {
             // 模拟业务处理耗时

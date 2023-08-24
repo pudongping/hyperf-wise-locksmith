@@ -6,7 +6,7 @@ use RuntimeException;
 use Psr\Log\LoggerInterface;
 use Hyperf\Redis\RedisProxy;
 use Hyperf\Redis\RedisFactory;
-use Hyperf\Utils\ApplicationContext;
+use Hyperf\Context\ApplicationContext;
 use Hyperf\Contract\StdoutLoggerInterface;
 use Hyperf\Contract\ConfigInterface;
 use Pudongping\WiseLocksmith\Locker as BaseLocker;
