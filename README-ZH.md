@@ -19,13 +19,13 @@
 
 ## 要求
 
-- PHP >= 8.0
-- hyperf ~3.0.0
+- PHP >= 8.1
+- hyperf ~3.1.0
 
 ## 安装
 
 ```shell
-composer require pudongping/hyperf-wise-locksmith:^2.0 -vvv
+composer require pudongping/hyperf-wise-locksmith:^3.0 -vvv
 ```
 
 ## 分支或者标签
@@ -33,12 +33,14 @@ composer require pudongping/hyperf-wise-locksmith:^2.0 -vvv
 ### 分支
 
 - **2.2:** For hyperf 2.2
-- **3.0:** For hyperf 3.0
+- **3.0:** For hyperf ~3.0
+- **3.1:** For hyperf ~3.1
 
 ### 标签
 
 - **1.0.x:** For hyperf 2.2
 - **2.0.x:** For hyperf 3.0
+- **3.0.x:** For hyperf 3.1
 
 ## 快速开始
 

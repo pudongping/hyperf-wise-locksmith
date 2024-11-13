@@ -19,13 +19,13 @@ English | [中文](./README-ZH.md)
 
 ## Requirements
 
-- PHP >= 8.0
-- hyperf ~3.0.0
+- PHP >= 8.1
+- hyperf ~3.1.0
 
 ## Installation
 
 ```shell
-composer require pudongping/hyperf-wise-locksmith:^2.0 -vvv
+composer require pudongping/hyperf-wise-locksmith:^3.0 -vvv
 ```
 
 ## Branches or tags
@@ -33,12 +33,14 @@ composer require pudongping/hyperf-wise-locksmith:^2.0 -vvv
 ### Branch
 
 - **2.2:** For hyperf 2.2
-- **3.0:** For hyperf 3.0
+- **3.0:** For hyperf ~3.0
+- **3.1:** For hyperf ~3.1
 
 ### Tag
 
 - **1.0.x:** For hyperf 2.2
 - **2.0.x:** For hyperf 3.0
+- **3.0.x:** For hyperf 3.1
 
 ## Quickstart
 

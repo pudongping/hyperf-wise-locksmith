@@ -27,9 +27,9 @@
     "autoload-dev": {
     },
     "require": {
-        "php": ">=8.0",
-        "hyperf/logger": "~3.0.0",
-        "hyperf/redis": "~3.0.0",
+        "php": ">=8.1",
+        "hyperf/logger": "~3.1.0",
+        "hyperf/redis": "~3.1.0",
         "pudongping/wise-locksmith": "^1.0"
     },
     "config": {
